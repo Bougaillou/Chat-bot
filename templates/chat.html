@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+
+{% block title %}Chat{% endblock %}
+
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/chat/chat.css') }}">
+{% endblock %}
+{% block body %}
+
+<section class="chat">
+    <div class="chat_page container_chat" style="margin-right: auto; margin-left: auto;">
+        <div class="chatbox mb-5">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="../static/img/bot-removebg-preview.png" alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Chat healtcare</h4>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <div></div>
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button ">
+                        <img src="../static/img/send.png" alt="">
+                    </button>
+                    <button class="chatbox__send--footer send__button clean" id="clean-btn">
+                        <img src="../static/img/Claen1.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static',filename='script/chat.js') }}"></script>
+{% endblock %}

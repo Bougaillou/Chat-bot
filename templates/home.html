@@ -1,0 +1,151 @@
+{% extends './base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/home/home.css') }}">
+{% endblock %}
+{% block body %}
+
+<section class="home" id="home">
+    <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>IAB</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate reiciendis quae expedita, perferendis ex dolor ad voluptatum.</p>
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-tiktok' ></i></a>
+        </div>
+        <a href="{{ url_for('chat') }}" class="btn">Get Started</a>
+    </div>
+    <div class="home-img">
+        <img src="{{ url_for('static',filename='img/Profil1.PNG') }}" alt="">
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="{{ url_for('static',filename='img/Profil1.PNG') }}" alt="">
+    </div>
+    <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3>Medical ChatBot</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores architecto porro quae tenetur exercitationem sapiente dolores et dignissimos. Qui ut suscipit rem nisi, commodi perspiciatis itaque accusamus sed officiis corrupti voluptatem, minima doloribus doloremque! Laboriosam neque tenetur minima et eius modi qui sapiente explicabo culpa laborum.</p>
+        <a href="#" class="btn">Read More</a>
+    </div>
+</section>
+
+<section class="service" id="service">
+    <h2 class="heading">Our <span>Service</span></h2>
+    <div class="service-container">
+        <div class="service-box">
+            <i class='bx bxs-heart-circle' ></i>
+            <h3>CARDIOLOGY</h3>
+            <p id="p-service1">Our cardiology services provide comprehensive care and treatment options for a wide range of heart-related conditions, from diagnosis to management and beyond.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="service-box">
+            <i class='bx bx-plus-medical' ></i>
+            <h3>FIRST AID</h3>
+            <p id="p-service2">Our first aid services offer essential emergency care and training to individuals and organizations, equipping them with the knowledge and skills necessary to respond to medical emergencies promptly and effectively.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="service-box">
+            <i class='bx bxs-universal-access'></i>
+            <h3>Digital Marketing</h3>
+            <p id="p-service3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea velit culpa exercitationem. Illum ut nihil tempore a sunt tempora in.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
+
+<section class="article" id="article">
+    <h2 class="heading">Latest <span>Article</span></h2>
+    <div class="article-container">
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article1.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article2.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article3.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article4.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article5.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+        <div class="article-box">
+            <img src="{{ url_for('static',filename='img/Article6.jpg') }}" alt="">
+            <div class="article-layer">
+                <h4>Web Design</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, itaque.</p>
+                <a href=""><i class='bx bx-link-external' ></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+    <form action="#">
+        <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-box">
+            <input type="number" placeholder="Mobile Number">
+            <input type="text" placeholder="Email Subject">
+        </div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+    </form>
+</section> -->
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2023 by Codehal | All Right Reserved.</p>
+    </div>
+    <div>
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
+
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="{{ url_for('static',filename='script/home.js') }}"></script>
+{% endblock %}

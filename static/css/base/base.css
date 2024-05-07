@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --nav-bg:rgba(221, 230, 251,0.7);
+  --bg-color:#dde6fb;
+  --second-bg-color: #d5e3ff;
+  --text-color:#1f242d;
+  --main-color:#457df6;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg);
+  padding: 28px 12%;
+  transition: all 0.5s ease;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  animation: slideRight 1s ease forwards;
+}
+header .logo i {
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 3px;
+}
+header .logo span {
+  color: var(--text-color);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+header .navbar {
+  display: flex;
+}
+header .navbar a {
+  display: inline-block;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 500;
+  margin: 5px 0;
+  margin: 0px 30px;
+  transition: all 0.5s ease;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+header .navbar a:hover {
+  color: var(--main-color);
+}
+header .navbar a.active {
+  color: var(--main-color);
+}
+header .main {
+  display: flex;
+  align-items: center;
+}
+header .main a {
+  display: inline-block;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+  margin-right: 25px;
+  margin-left: 10px;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+header .main .user {
+  display: flex;
+  align-items: center;
+}
+header .main .user i {
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 7px;
+}
+header .main a:hover {
+  color: var(--main-color);
+}
+header .main .menu-icon {
+  font-size: 35px;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+span {
+  color: var(--main-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background-color: var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.6rem;
+  color: var(--second-bg-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  box-shadow: none;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+}
+
+@media (max-width: 1280px) {
+  header {
+    padding: 14px 2%;
+    transition: 0.2s;
+  }
+  header .navbar a {
+    padding: 5px 0;
+    margin: 0px 20px;
+  }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+}
+@media (max-width: 768px) {
+  header .main .menu-icon {
+    display: block;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 270px;
+    height: 29vh;
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+  header .navbar a {
+    display: block;
+    margin: 12px 0;
+    padding: 0 25px;
+    transition: all 0.5s ease;
+  }
+  header .navbar a:hover {
+    color: var(--main-color);
+    transform: translateY(5px);
+  }
+  header .navbar a.active {
+    color: var(--main-color);
+  }
+  header .navbar.open {
+    right: 0;
+  }
+}/*# sourceMappingURL=base.css.map */

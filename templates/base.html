@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/base/base.css') }}">
+    <!--Boxicon Link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!--Google Font Link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    {% block customCSS %}{% endblock %}
+</head>
+<body>
+    <!-- Custem Header -->
+    <header>
+        <a href="{{ url_for('home') }}" class="logo"><i class='bx bx-health'></i><span>IAB</span></a>
+        {% if var=='home' %}
+        <ul class="navbar">
+            <li><a class="active" style="--i:1" href="#home">Home</a></li>
+            <li><a href="#about" style="--i:2">About</a></li>
+            <li><a href="#service" style="--i:3">Service</a></li>
+            <li><a href="#article" style="--i:4">Article</a></li>
+            <li><a href="#contact" style="--i:5">Contact</a></li>
+        </ul>
+        <div class="main">
+            {% if session['username'] %}
+            <a href="{{ url_for('logout') }}" style="--i:1" class="user"><i class='bx bx-user' ></i>Sign Out</a>
+            <a href="#" style="--i:2; cursor:default; font-size: 1.5rem;" class="user"  ><i class='bx bxs-user-account'></i>{{ session['username'] }}</a>
+            {% else %}
+            <a href="{{ url_for('sign') }}" style="--i:1" class="user"><i class='bx bx-user' ></i>Sign In/Up</a>
+            {% endif %}
+            <div class="bx bx-menu menu-icon"></div>
+        </div>
+        {% elif var=='sign' %}
+        <div class="main">
+            <a href="{{ url_for('home') }}" style="--i:1" class="user"><i class='bx bxs-home-alt-2' ></i>Back Home</a>
+        </div>
+        {% elif var=='chat' %}
+        <div class="main">
+            <a href="{{ url_for('home') }}" style="--i:1" class="user"><i class='bx bxs-home-alt-2' ></i>Back Home</a>
+            <a href="#" style="--i:2; cursor:default; font-size: 1.5rem;" class="user"  ><i class='bx bxs-user-account'></i>{{ session['username'] }}</a>
+            <a href="{{ url_for('logout') }}" style="--i:3" class="user"><i class='bx bx-exit'></i>Logout</a>
+        </div>
+        {% endif %}
+    </header>
+
+    {% block body %}
+    {% endblock %}
+
+
+</body>
+<script src="{{ url_for('static',filename='script/base.js') }}"></script>
+{% block script %}
+{% endblock %}
+</html>
